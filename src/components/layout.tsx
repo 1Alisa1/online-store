@@ -59,7 +59,14 @@ const Layout: React.FC = () => {
           </div>
         </div>
       </header>
-      <Outlet />
+      
+      <main>
+        <Outlet />
+      </main>
+      
+      <footer>
+        <div>© 2022 Company, Inc</div>
+      </footer>
     </>
   );
 };

@@ -1,0 +1,9 @@
+.items {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

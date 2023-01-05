@@ -1,0 +1,21 @@
+.card{
+  width: 12vw;
+  height: 35vh;
+  padding: 30px;
+  margin: 0px 15px 20px 15px;
+  .cardImg {
+    width: 12vw;
+    height: 30vh;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  .cardPrice {
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 0.5rem;
+  }
+  .cardTitle {
+    color: gray;
+    white-space: nowrap;
+  }
+}

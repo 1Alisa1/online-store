@@ -1,6 +1,10 @@
+import CardsProductWrapper from "../components/cardsProductWrapper/cardsProductWrapper";
+
 const HomePage = () => {
   return (
-    <div></div>
+    <div>
+      <CardsProductWrapper />
+    </div>
   );
 }
 

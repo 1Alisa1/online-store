@@ -1,13 +1,21 @@
-.card{
+.card {
   width: 12vw;
   height: 35vh;
   padding: 30px;
   margin: 0px 15px 20px 15px;
-  .cardImg {
+  .imgWrapper {
     width: 12vw;
     height: 30vh;
     border-radius: 10px;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cardImg {
+      width: 12vw;
+      height: 30vh;
+      object-fit: contain;
+    }
   }
   .cardPrice {
     font-weight: bold;

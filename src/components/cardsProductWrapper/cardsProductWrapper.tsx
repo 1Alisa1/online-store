@@ -8,6 +8,7 @@ interface ProductItem {
   image: string;
   title: string;
   price: string;
+  description: string;
 }
 
 const CardsProductWrapper: React.FC = () => {
@@ -40,9 +41,10 @@ const CardsProductWrapper: React.FC = () => {
         {items.map(el => (
           <li key={el.id}>
             <CardProduct 
-              img={el.image} 
-              price={el.price} 
-              title={el.title} />
+              img={el.image}
+              price={el.price}
+              title={el.title} 
+              description={el.description} />
           </li>
         ))}
       </ul>

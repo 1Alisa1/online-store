@@ -1,18 +1,20 @@
 import { useState } from 'react';
-import Modal from '../modal/modal';
+import ProductItem from '../../models/productItem';
 import Spinner from '../spinner/spinner';
 import styles from './cardProduct.module.scss';
 
 interface CardProductProps {
-  img: string;
-  price: string;
-  title: string;
-  description: string;
+  productItem: ProductItem;
+  handleDetailsClick: (productId: ProductItem['id']) => void;
 }
 
-const CardProduct: React.FC<CardProductProps> = ({ img, price, title, description }) => {
+const CardProduct: React.FC<CardProductProps> = ({
+  productItem,
+  handleDetailsClick,
+}) => {
   const [loading, setLoading] = useState(true);
-  const [modalActive, setModalActive] = useState(false);
+
+  const { image, price, title } = productItem;
 
   return (
     <div className={styles.card}>
@@ -22,7 +24,7 @@ const CardProduct: React.FC<CardProductProps> = ({ img, price, title, descriptio
         </div>
         <div style={{ display: loading ? 'none' : 'block' }}>
           <img
-            src={img}
+            src={image}
             alt="product"
             className={styles.cardImg}
             onLoad={() => setLoading(false)}
@@ -31,25 +33,17 @@ const CardProduct: React.FC<CardProductProps> = ({ img, price, title, descriptio
             <button
               className={styles.openProduct}
               type="button"
-              onClick={() => setModalActive(true)}
+              onClick={() => handleDetailsClick(productItem.id)}
             >
               More information
             </button>
           </div>
         </div>
       </div>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <div className={styles.modalContent}>
-          <img src={img} alt="product" className={styles.modalContentImg}></img>
-          <div>
-            <div className={styles.modalContentTitle}>{title}</div>
-            <div className={styles.modalContentPrice}>{price} $</div>
-            <div className={styles.modalContentDescription}>{description}</div>
-          </div>
-        </div>
-      </Modal>
       <div className={styles.cardPrice}>{price} $</div>
-      <div className={styles.cardTitle}>{title.length > 20 ? title.substring(0, 20) + '...' : title}</div>
+      <div className={styles.cardTitle}>
+        {title.length > 20 ? title.substring(0, 20) + '...' : title}
+      </div>
     </div>
   );
 };

@@ -1,18 +1,27 @@
+import Portal from '../portal/portal';
 import styles from './modal.module.scss';
 
 interface ModalProps {
   active: boolean;
   setActive: (value: React.SetStateAction<boolean>) => void;
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({active, setActive, children}) => {
+const Modal: React.FC<ModalProps> = ({ active, setActive, children }) => {
   return (
-    <div className={active ? `${styles.modal} ${styles.active}` : styles.modal} onClick ={() => setActive(false)}>
-      <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-        {children}
+    <Portal wrapperElementId="modal-root">
+      <div
+        className={active ? `${styles.modal} ${styles.active}` : styles.modal}
+        onClick={() => setActive(false)}
+      >
+        <div
+          className={styles.modalContent}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {children}
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 };
 

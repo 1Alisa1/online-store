@@ -17,6 +17,9 @@
     pointer-events: all;
   }
   .modalContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 25px;
     border-radius: 12px;
     background-color: white;

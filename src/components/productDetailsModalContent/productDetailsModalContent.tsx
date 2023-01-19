@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import ProductItem from '../../models/productItem';
+import { useProductDetails } from '../../hooks/useProductDetails';
 import Spinner from '../spinner/spinner';
 import styles from './productDetailsModalContent.module.scss';
 
@@ -10,43 +9,24 @@ interface productDetailsModalContentProps {
 const ProductDetailsModalContent: React.FC<productDetailsModalContentProps> = ({
   productId,
 }) => {
-  const [productItem, setProductItem] = useState<ProductItem | null>(null);
-  const [error, setError] = useState<{ message: string } | null>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${productId}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setProductItem(result);
-          setIsLoaded(true);
-        },
-        (error) => {
-          setError(error);
-          console.log(error.message);
-        }
-      );
-  }, [productId]);
+  const { loading, details, error } = useProductDetails(productId);
 
   return (
     <>
       {error && <div>Oops... Something went wrong...</div>}
-      {!isLoaded && <Spinner />}
-      {isLoaded && productItem && (
+      {loading && <Spinner />}
+      {!loading && details && (
         <div className={styles.modalContent}>
           <img
-            src={productItem.image}
+            src={details.image}
             alt="product"
             className={styles.modalContentImg}
           ></img>
           <div>
-            <div className={styles.modalContentTitle}>{productItem.title}</div>
-            <div className={styles.modalContentPrice}>
-              {productItem.price} $
-            </div>
+            <div className={styles.modalContentTitle}>{details.title}</div>
+            <div className={styles.modalContentPrice}>{details.price} $</div>
             <div className={styles.modalContentDescription}>
-              {productItem.description}
+              {details.description}
             </div>
           </div>
         </div>

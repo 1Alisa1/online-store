@@ -1,12 +1,17 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useProductList } from '../../hooks/useProductList';
 import CardProduct from '../cardProduct/cardProduct';
 import Modal from '../modal/modal';
 import ProductDetailsModalContent from '../productDetailsModalContent/productDetailsModalContent';
-import styles from './cardsProductWrapper.module.scss';
+import styles from './catalog.module.scss';
 
-const CardsProductWrapper: React.FC = () => {
-  const { loading, products, error } = useProductList();
+const Catalog: React.FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const category: string | null = searchParams.get('category');
+
+  const { loading, products, error } = useProductList(category);
 
   const [activeProductId, setActiveProductId] = useState<number | null>(null);
 
@@ -41,4 +46,4 @@ const CardsProductWrapper: React.FC = () => {
   }
 };
 
-export default CardsProductWrapper;
+export default Catalog;

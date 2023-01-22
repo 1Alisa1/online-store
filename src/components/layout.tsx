@@ -1,6 +1,15 @@
+import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Categories from './categories/categories';
 
 const Layout: React.FC = () => {
+  const [activeCatalog, setActiveCatalog] = useState(false);
+
+  const handleClick = () => {
+    document.body.classList.toggle('catalogOpen');
+    setActiveCatalog(!activeCatalog);
+  };
+
   return (
     <>
       <header className="header">
@@ -16,13 +25,13 @@ const Layout: React.FC = () => {
                 <div>Минск</div>
               </li>
               <li>
-                <div className='sale'>Продавайте на Wildberries</div>
+                <div className="sale">Продавайте на Wildberries</div>
               </li>
             </ul>
           </div>
           <div className="headerBottom">
             <div className="headerCatalog">
-              <button type="button"></button>
+              <button type="button" onClick={handleClick}></button>
             </div>
             <Link to="/" className="headerLogo">
               <img
@@ -59,11 +68,12 @@ const Layout: React.FC = () => {
           </div>
         </div>
       </header>
-      
+
       <main>
         <Outlet />
+        <Categories isActive={activeCatalog} handleClick={handleClick} />
       </main>
-      
+
       <footer>
         <div>© 2022 Company, Inc</div>
       </footer>

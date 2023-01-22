@@ -1,9 +1,9 @@
-import CardsProductWrapper from "../components/cardsProductWrapper/cardsProductWrapper";
+import Catalog from "../components/catalog/catalog";
 
 const HomePage = () => {
   return (
     <div>
-      <CardsProductWrapper />
+      <Catalog />
     </div>
   );
 }

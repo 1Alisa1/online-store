@@ -1,0 +1,65 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  h1 {
+    margin-bottom: 3rem;
+  }
+  .cart {
+    display: flex;
+    flex-direction: row;
+    gap: 20vw;
+    .product {
+      .productContent {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+        width: 40vw;
+        margin-bottom: 5rem;
+        img {
+          width: 15vw;
+          height: auto;
+        }
+        .productInfo {
+          .productTitle {
+            margin-bottom: 1.5rem;
+            font-size: large;
+          }
+          .productPrice {
+            margin-bottom: 2rem;
+            font-size: large;
+          }
+          .count {
+            display: inline-block;
+            background: #f6f6fa;
+            border-radius: 6px;
+            .buttonLeft {
+              border: none;
+              border-radius: 6px;
+              font-size: x-large;
+              margin-right: 1rem;
+              cursor: pointer;
+            }
+            span {
+              font-size: larger;
+            }
+            .buttonRight {
+              border: none;
+              border-radius: 6px;
+              font-size: x-large;
+              margin-left: 1rem;
+              cursor: pointer;
+            }
+          }
+        }
+        .removeButton {
+          height: fit-content;
+          font-size: larger;
+          padding: 4px 10px;
+          border: none;
+          cursor: pointer;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+}

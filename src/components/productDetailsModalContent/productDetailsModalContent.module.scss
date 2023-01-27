@@ -26,5 +26,20 @@
       font-size: large;
       text-align: justify;
     }
+    input {
+      background-color: #cb11ab;
+      color: white;
+      display: block;
+      height: 44px;
+      width: 40%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      &:hover {
+        background-color: #e313bf;
+      }
+    }
   }
 }

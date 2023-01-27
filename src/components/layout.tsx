@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { useAppSelector } from '../hooks/reduxHooks';
 import Categories from './categories/categories';
 
 const Layout: React.FC = () => {
@@ -8,6 +9,16 @@ const Layout: React.FC = () => {
   const handleClick = () => {
     document.body.classList.toggle('catalogOpen');
     setActiveCatalog(!activeCatalog);
+  };
+
+  const cart = useAppSelector((state) => state.onlineStore.cart);
+
+  const getTotalQuantity = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.amount;
+    });
+    return total;
   };
 
   return (
@@ -60,8 +71,9 @@ const Layout: React.FC = () => {
                 <div className="icon2"></div>
                 <p>Войти</p>
               </Link>
-              <Link to="/basket">
+              <Link to="/cart">
                 <div className="icon3"></div>
+                <div className="badge">{getTotalQuantity() || 0}</div>
                 <p>Корзина</p>
               </Link>
             </div>

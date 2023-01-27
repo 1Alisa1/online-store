@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Catalog from './components/catalog/catalog';
 import { Layout } from './components/layout';
 import AddressesPage from './pages/addressesPage';
-import BasketPage from './pages/basketPage';
+import CartPage from './pages/cart/cartPage';
 import HomePage from './pages/homePage';
 import SecurityPage from './pages/securityPage';
 
@@ -16,7 +16,7 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/addresses" element={<AddressesPage />} />
           <Route path="/security" element={<SecurityPage />} />
-          <Route path="/basket" element={<BasketPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
     </>

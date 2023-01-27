@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/reduxHooks';
 import { useProductDetails } from '../../hooks/useProductDetails';
+import { addCart } from '../../store/storeSlice';
 import Spinner from '../spinner/spinner';
 import styles from './productDetailsModalContent.module.scss';
 
@@ -10,6 +13,9 @@ const ProductDetailsModalContent: React.FC<productDetailsModalContentProps> = ({
   productId,
 }) => {
   const { loading, details, error } = useProductDetails(productId);
+
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -28,6 +34,14 @@ const ProductDetailsModalContent: React.FC<productDetailsModalContentProps> = ({
             <div className={styles.modalContentDescription}>
               {details.description}
             </div>
+            <input
+              type="submit"
+              value="Add to shopping cart"
+              onClick={() => {
+                dispatch(addCart(details));
+                navigate('/cart');
+              }}
+            ></input>
           </div>
         </div>
       )}

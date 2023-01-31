@@ -5,8 +5,8 @@
 }
 
 .orderInfo {
-  width: 18vw;
-  height: auto;
+  width: 300px;
+  height: fit-content;
   padding: 20px;
   background-color: #f6f6fa;
   border-radius: 16px;
@@ -30,7 +30,7 @@
     background-color: #cb11ab;
     color: white;
     display: block;
-    height: 44px;
+    height: 2.5rem;
     width: 100%;
     border: none;
     border-radius: 8px;

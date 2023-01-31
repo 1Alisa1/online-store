@@ -1,26 +1,31 @@
 .wrapper {
-  max-width: 1200px;
+  max-width: 1504px;
   margin: 0 auto;
+  padding: 0 32px;
   h1 {
     margin-bottom: 3rem;
   }
   .cart {
     display: flex;
     flex-direction: row;
-    gap: 20vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
     .product {
       .productContent {
         display: flex;
         flex-direction: row;
-        gap: 5rem;
-        width: 40vw;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 752px;
         margin-bottom: 5rem;
         img {
           width: 15vw;
           height: auto;
         }
         .productInfo {
+          width: 50%;
           .productTitle {
+            
             margin-bottom: 1.5rem;
             font-size: large;
           }

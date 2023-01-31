@@ -8,21 +8,23 @@ const OrderInfo: React.FC = () => {
     let totalAmount = 0;
     let totalPrice = 0;
     cart.forEach((item) => {
-      totalAmount += Number(item.amount.toFixed(1));
+      totalAmount += item.amount;
       totalPrice += Number((Number(item.price) * item.amount).toFixed(1));
     });
     return { totalPrice, totalAmount };
   };
 
+  const total = getTotal();
+
   return (
     <div className={styles.orderInfo}>
       <div className={styles.total}>
         <span>Total</span>
-        <span>{getTotal().totalPrice} $</span>
+        <span>{total.totalPrice} $</span>
       </div>
       <div className={styles.amount}>
-        <span>{getTotal().totalAmount} product</span>
-        <span>{getTotal().totalPrice} $</span>
+        <span>{total.totalAmount} product</span>
+        <span>{total.totalPrice} $</span>
       </div>
       <div className={styles.delivery}>
         <span>Delivery</span>

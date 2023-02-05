@@ -1,0 +1,6 @@
+.message {
+  font-size: smaller;
+  &:empty::before {
+    content: "\200b";
+  }
+}

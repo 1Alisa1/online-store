@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, redirect } from 'react-router-dom';
 import { useAppSelector } from '../hooks/reduxHooks';
+import { useAuth } from '../hooks/useAuth';
 import Categories from './categories/categories';
 
 const Layout: React.FC = () => {
@@ -20,6 +21,8 @@ const Layout: React.FC = () => {
     });
     return total;
   };
+
+  const { isAuth, name } = useAuth();
 
   return (
     <>
@@ -67,9 +70,9 @@ const Layout: React.FC = () => {
                 <div className="icon1"></div>
                 <p>Адреса</p>
               </Link>
-              <Link to="/security">
+              <Link to={isAuth ? '/user' : '/security'}>
                 <div className="icon2"></div>
-                <p>Войти</p>
+                <p>{isAuth ? name : 'Войти'}</p>
               </Link>
               <Link to="/cart">
                 <div className="icon3"></div>

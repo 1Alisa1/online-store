@@ -4,6 +4,8 @@
   align-items: center;
 }
 
+$linkColor: rgb(131 26 153);
+
 .orderInfo {
   width: 300px;
   height: fit-content;
@@ -37,8 +39,21 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
+    margin-bottom: 1rem;
     &:hover {
       background-color: #e313bf;
+    }
+  }
+  a {
+    p {
+      text-align: center;
+      color: $linkColor;
+    }
+    &:active {
+      color: $linkColor;
+    }
+    &:visited {
+      color: $linkColor;
     }
   }
 }

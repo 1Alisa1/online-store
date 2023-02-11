@@ -1,4 +1,7 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/reduxHooks';
+import { useAuth } from '../../hooks/useAuth';
 import styles from './orderInfo.module.scss';
 
 const OrderInfo: React.FC = () => {
@@ -16,6 +19,20 @@ const OrderInfo: React.FC = () => {
 
   const total = getTotal();
 
+  const [visibleLink, setVisibleLink] = useState(false);
+
+
+  const {isAuth} = useAuth();
+
+  const handleSubmit = () => {
+    if (isAuth) {
+      alert('Your order has been submitted');
+    } else {
+      setVisibleLink(true);
+    }
+  }
+
+
   return (
     <div className={styles.orderInfo}>
       <div className={styles.total}>
@@ -30,9 +47,18 @@ const OrderInfo: React.FC = () => {
         <span>Delivery</span>
         <span>For free</span>
       </div>
-      <input type="submit" value="Checkout"></input>
+      <input type="submit" value="Checkout" onClick={handleSubmit}></input>
+      {visibleLink && (
+        <Link to='/security'>
+          <p>
+            To place an order, you need to log in or register
+          </p>
+        </Link>
+      )}
     </div>
   );
 };
 
 export default OrderInfo;
+
+

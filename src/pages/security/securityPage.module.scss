@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+  width: 40%;
+  height: fit-content;
+  border-radius: 12px;
+  background-color: rgb(243, 240, 240);
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    button {
+      width: 49%;
+      padding: 10px;
+      border: none;
+      background-color: #cb11ab;
+      color: #fff;
+      font-size: large;
+      cursor: pointer;
+      &.loginBtn {
+        border-radius: 12px 0 0 0;
+      }
+      &.registrationBtn {
+        border-radius: 0 12px 0 0;
+      }
+      &:hover {
+        background-color: #e313bf;
+      }
+    }
+  }
+}

@@ -1,10 +1,12 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Catalog from './components/catalog/catalog';
 import { Layout } from './components/layout';
+import { RequireAuth } from './hoc/requireAuth';
 import AddressesPage from './pages/addressesPage';
 import CartPage from './pages/cart/cartPage';
 import HomePage from './pages/homePage';
-import SecurityPage from './pages/securityPage';
+import SecurityPage from './pages/security/securityPage';
+import UserPage from './pages/userPage/userPage';
 
 function App() {
   return (
@@ -17,6 +19,14 @@ function App() {
           <Route path="/addresses" element={<AddressesPage />} />
           <Route path="/security" element={<SecurityPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route
+            path="/user"
+            element={
+              <RequireAuth>
+                <UserPage />
+              </RequireAuth>
+            }
+          />
         </Route>
       </Routes>
     </>

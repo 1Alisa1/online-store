@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Link, Outlet, redirect } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useAppSelector } from '../hooks/reduxHooks';
 import { useAuth } from '../hooks/useAuth';
 import Categories from './categories/categories';
+import ProductsFilter from './productsFilter/productsFilter';
 
 const Layout: React.FC = () => {
   const [activeCatalog, setActiveCatalog] = useState(false);
@@ -11,7 +12,7 @@ const Layout: React.FC = () => {
     document.body.classList.toggle('catalogOpen');
     setActiveCatalog(!activeCatalog);
   };
-
+  
   const cart = useAppSelector((state) => state.onlineStore.cart);
 
   const getTotalQuantity = () => {
@@ -53,14 +54,7 @@ const Layout: React.FC = () => {
                 alt="wildberries"
               ></img>
             </Link>
-            <div className="headerSearch">
-              <input
-                type="search"
-                autoComplete="off"
-                placeholder="Я ищу..."
-              ></input>
-              <button type="button"></button>
-            </div>
+            <ProductsFilter></ProductsFilter>
             <div className="headerContent">
               <Link
                 to="/addresses"

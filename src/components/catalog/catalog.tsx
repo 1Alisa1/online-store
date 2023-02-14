@@ -11,7 +11,9 @@ const Catalog: React.FC = () => {
 
   const category: string | null = searchParams.get('category');
 
-  const { loading, products, error } = useProductList(category);
+  const productQuery = searchParams.get('query') || '';
+
+  const { loading, products, error } = useProductList(category, productQuery);
 
   const [activeProductId, setActiveProductId] = useState<number | null>(null);
 

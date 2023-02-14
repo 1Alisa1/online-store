@@ -1,7 +1,10 @@
 import { useFetch } from './useFetch';
 import ProductItem from '../models/productItem';
 
-export function useProductList(category?: string | null) {
+export function useProductList(
+  category?: string | null,
+  searchQuery?: string | null
+) {
   let url = 'https://fakestoreapi.com/products';
 
   if (category) {
@@ -10,9 +13,17 @@ export function useProductList(category?: string | null) {
 
   const { loading, response, error } = useFetch<ProductItem[]>(url);
 
+  let result = response;
+
+  if (searchQuery && !error && !loading && result) {
+    result = result.filter((product) =>
+      product.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+
   return {
     loading,
-    products: response,
+    products: result,
     error,
   };
 }

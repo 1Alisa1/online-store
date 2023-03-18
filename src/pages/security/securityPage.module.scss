@@ -3,13 +3,13 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  @media (max-width: 768px) {
-    width: 70%;
-  }
-  width: 40%;
+  width: 30%;
   height: fit-content;
   border-radius: 12px;
   background-color: rgb(243, 240, 240);
+  @media (max-width: 768px) {
+    width: 70%;
+  }
   & > div {
     display: flex;
     justify-content: space-between;

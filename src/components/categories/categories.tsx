@@ -14,7 +14,7 @@ const Categories: React.FC<CategoriesProps> = ({ isActive, handleClick }) => {
     <div>
       <div
         className={styles.categories}
-        style={{ left: isActive ? '0' : '-20vw' }}
+        style={{left: isActive ? '0' : '-40vw'}}
       >
         {(() => {
           if (error) {
@@ -44,7 +44,7 @@ const Categories: React.FC<CategoriesProps> = ({ isActive, handleClick }) => {
       </div>
       <div
         className={styles.overlay}
-        style={{ display: isActive ? 'block' : 'none'}}
+        style={{ display: isActive ? 'block' : 'none' }}
       ></div>
     </div>
   );

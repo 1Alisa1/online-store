@@ -1,9 +1,9 @@
 @import-normalize;
 
-@mixin flex () {
+@mixin flex() {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #root {
@@ -12,7 +12,8 @@
   height: 100%;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
 }
@@ -31,7 +32,7 @@ body.catalogOpen {
 }
 
 .header {
-  background: linear-gradient(to right,#cb11ab 0,#481173 100%) no-repeat;
+  background: linear-gradient(to right, #cb11ab 0, #481173 100%) no-repeat;
   padding: 16px 0 44px;
   position: relative;
   &::after {
@@ -44,7 +45,7 @@ body.catalogOpen {
     position: absolute;
     bottom: -1px;
     left: 0;
-  }  
+  }
 }
 
 .headerTop {
@@ -63,7 +64,8 @@ body.catalogOpen {
       gap: 0.5rem;
       cursor: pointer;
       .flagBy {
-        background: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%20fill%3D%22%230039A5%22%2F%3E%3Cpath%20d%3D%22M12%206A6%206%200%201%201%200%206a6%206%200%200%201%2012%200z%22%20fill%3D%22%23EC1B26%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M.264%207.765a6.003%206.003%200%200%200%2011.472%200H.264z%22%20fill%3D%22%2300A653%22%2F%3E%3C%2Fsvg%3E) center no-repeat;
+        background: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%20fill%3D%22%230039A5%22%2F%3E%3Cpath%20d%3D%22M12%206A6%206%200%201%201%200%206a6%206%200%200%201%2012%200z%22%20fill%3D%22%23EC1B26%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M.264%207.765a6.003%206.003%200%200%200%2011.472%200H.264z%22%20fill%3D%22%2300A653%22%2F%3E%3C%2Fsvg%3E)
+          center no-repeat;
         background-size: contain;
         border-radius: 50%;
         width: 12px;
@@ -73,16 +75,18 @@ body.catalogOpen {
       .iconAddress {
         width: 11px;
         height: 16px;
-        background: url(data:image/svg+xml,%3Csvg%20width%3D%2211%22%20height%3D%2216%22%20viewBox%3D%220%200%2011%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10.5385%205.34162C10.5385%207.56736%207.53919%2012.3921%206.06629%2014.6272C5.68463%2015.2063%204.85387%2015.2063%204.47221%2014.6272C2.99931%2012.3921%200%207.56736%200%205.34162C0%202.39153%202.35912%200%205.26925%200C8.17938%200%2010.5385%202.39153%2010.5385%205.34162ZM7.72821%205.34157C7.72821%206.71829%206.62728%207.83433%205.26922%207.83433C3.91116%207.83433%202.81024%206.71829%202.81024%205.34157C2.81024%203.96486%203.91116%202.84882%205.26922%202.84882C6.62728%202.84882%207.72821%203.96486%207.72821%205.34157Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A) center/contain no-repeat;
+        background: url(data:image/svg+xml,%3Csvg%20width%3D%2211%22%20height%3D%2216%22%20viewBox%3D%220%200%2011%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10.5385%205.34162C10.5385%207.56736%207.53919%2012.3921%206.06629%2014.6272C5.68463%2015.2063%204.85387%2015.2063%204.47221%2014.6272C2.99931%2012.3921%200%207.56736%200%205.34162C0%202.39153%202.35912%200%205.26925%200C8.17938%200%2010.5385%202.39153%2010.5385%205.34162ZM7.72821%205.34157C7.72821%206.71829%206.62728%207.83433%205.26922%207.83433C3.91116%207.83433%202.81024%206.71829%202.81024%205.34157C2.81024%203.96486%203.91116%202.84882%205.26922%202.84882C6.62728%202.84882%207.72821%203.96486%207.72821%205.34157Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A)
+          center/contain no-repeat;
         top: 2px;
         left: 0;
-        opacity: .6;
+        opacity: 0.6;
       }
       .sale {
-        background: #cb11ab linear-gradient(90deg,#bf5ae0 0,#a811da 100%);
+        background: #cb11ab linear-gradient(90deg, #bf5ae0 0, #a811da 100%);
         border-radius: 40px;
         color: #fff;
         padding: 3px 12px;
+        text-align: center;
       }
     }
   }
@@ -91,27 +95,41 @@ body.catalogOpen {
 .headerBottom {
   @include flex();
   gap: 2rem;
-}
-
-.headerCatalog {
-  button {
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    padding: 21px;
-    border: 1px solid white;
-    border-radius: 5px;
-    filter: brightness(0) invert(1);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(https://cdn-icons-png.flaticon.com/24/483/483334.png);
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
+  .headerCatalog {
+    width: 3%;
+    @media (max-width: 1200px) {
+      width: 10%;
+    }
+    button {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      padding: 21px;
+      border: 1px solid white;
+      border-radius: 5px;
+      filter: brightness(0) invert(1);
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(https://cdn-icons-png.flaticon.com/24/483/483334.png);
+    }
+  }
+  .headerLogo {
+    width: 35%;
+    max-width: 270px;
+    min-width: 200px;
+    img {
+      width: 100%;
+    }
   }
 }
 
 ////
 
-@mixin icon ($width) {
+@mixin icon($width) {
   display: block;
   height: 27px;
   margin: 0 auto 6px;
@@ -124,9 +142,14 @@ body.catalogOpen {
   gap: 2rem;
   line-height: 0px;
   position: relative;
+  @media (max-width: 1200px) {
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
   .addresses:hover::after {
     content: attr(data-title);
-    position: absolute; 
+    position: absolute;
     left: -66px;
     right: 103px;
     bottom: -50px;
@@ -137,18 +160,22 @@ body.catalogOpen {
     padding: 20px 5px;
     border-radius: 15px;
     color: black;
-  }  
+    font-size: 0.8rem
+  }
   .icon1 {
     @include icon(16px);
-    background: url(data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2224%22%20viewBox%3D%220%200%2016%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%208.10988C16%2011.7119%2010.826%2019.7973%208.79995%2022.8253C8.41424%2023.4018%207.58576%2023.4018%207.20005%2022.8253C5.17398%2019.7973%200%2011.7119%200%208.10988C0%203.63092%203.58172%200%208%200C12.4183%200%2016%203.63092%2016%208.10988ZM11.7333%208.10981C11.7333%2010.2%2010.0618%2011.8944%207.99994%2011.8944C5.93807%2011.8944%204.2666%2010.2%204.2666%208.10981C4.2666%206.01962%205.93807%204.3252%207.99994%204.3252C10.0618%204.3252%2011.7333%206.01962%2011.7333%208.10981Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A) center/contain no-repeat;
+    background: url(data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2224%22%20viewBox%3D%220%200%2016%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16%208.10988C16%2011.7119%2010.826%2019.7973%208.79995%2022.8253C8.41424%2023.4018%207.58576%2023.4018%207.20005%2022.8253C5.17398%2019.7973%200%2011.7119%200%208.10988C0%203.63092%203.58172%200%208%200C12.4183%200%2016%203.63092%2016%208.10988ZM11.7333%208.10981C11.7333%2010.2%2010.0618%2011.8944%207.99994%2011.8944C5.93807%2011.8944%204.2666%2010.2%204.2666%208.10981C4.2666%206.01962%205.93807%204.3252%207.99994%204.3252C10.0618%204.3252%2011.7333%206.01962%2011.7333%208.10981Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A)
+      center/contain no-repeat;
   }
   .icon2 {
     @include icon(19px);
-    background: url(data:image/svg+xml,%3Csvg%20width%3D%2219%22%20height%3D%2220%22%20viewBox%3D%220%200%2019%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.0207%204.78873C14.0207%207.55869%2011.9361%209.70657%209.50596%209.70657C7.07586%209.70657%204.99117%207.55869%204.99117%204.81221C4.97931%202.10094%207.08777%200%209.50596%200C11.9241%200%2014.0207%202.05399%2014.0207%204.78873ZM0%2018.4977C0%2019.4836%200.64326%2020%202.44201%2020H16.558C18.3567%2020%2019%2019.4836%2019%2018.4977C19%2015.6338%2015.3429%2011.6901%209.50596%2011.6901C3.65705%2011.6901%200%2015.6338%200%2018.4977Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A) center/contain no-repeat;
+    background: url(data:image/svg+xml,%3Csvg%20width%3D%2219%22%20height%3D%2220%22%20viewBox%3D%220%200%2019%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.0207%204.78873C14.0207%207.55869%2011.9361%209.70657%209.50596%209.70657C7.07586%209.70657%204.99117%207.55869%204.99117%204.81221C4.97931%202.10094%207.08777%200%209.50596%200C11.9241%200%2014.0207%202.05399%2014.0207%204.78873ZM0%2018.4977C0%2019.4836%200.64326%2020%202.44201%2020H16.558C18.3567%2020%2019%2019.4836%2019%2018.4977C19%2015.6338%2015.3429%2011.6901%209.50596%2011.6901C3.65705%2011.6901%200%2015.6338%200%2018.4977Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A)
+      center/contain no-repeat;
   }
   .icon3 {
     @include icon(27px);
-    background: url(data:image/svg+xml,%3Csvg%20width%3D%2227%22%20height%3D%2224%22%20viewBox%3D%220%200%2027%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.5%201.5C8.5%202.5%206%202.5%204.5%202.5C3%202.5%200.5%202.5%200.5%201.5C0.5%200.5%203%200.5%204.5%200.5C6%200.5%208.5%200.5%208.5%201.5ZM11.8212%2016.119C11.3452%2016.1949%2010.8829%2015.9206%2010.7214%2015.4665L7.48289%206.35812C7.24913%205.70067%207.74355%205.01199%208.44122%205.02324L25.8008%205.30317C26.425%205.31324%2026.8875%205.88644%2026.7654%206.49865L25.4106%2013.2909C25.3288%2013.701%2025.0004%2014.017%2024.5874%2014.0828L11.8212%2016.119ZM13.6523%2021.0331C13.6523%2022.3178%2012.6109%2023.3593%2011.3262%2023.3593C10.0415%2023.3593%209%2022.3178%209%2021.0331C9%2019.7484%2010.0415%2018.707%2011.3262%2018.707C12.6109%2018.707%2013.6523%2019.7484%2013.6523%2021.0331ZM22.957%2023.3593C24.2417%2023.3593%2025.2832%2022.3178%2025.2832%2021.0331C25.2832%2019.7484%2024.2417%2018.707%2022.957%2018.707C21.6723%2018.707%2020.6309%2019.7484%2020.6309%2021.0331C20.6309%2022.3178%2021.6723%2023.3593%2022.957%2023.3593Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A) center/contain no-repeat;
+    background: url(data:image/svg+xml,%3Csvg%20width%3D%2227%22%20height%3D%2224%22%20viewBox%3D%220%200%2027%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.5%201.5C8.5%202.5%206%202.5%204.5%202.5C3%202.5%200.5%202.5%200.5%201.5C0.5%200.5%203%200.5%204.5%200.5C6%200.5%208.5%200.5%208.5%201.5ZM11.8212%2016.119C11.3452%2016.1949%2010.8829%2015.9206%2010.7214%2015.4665L7.48289%206.35812C7.24913%205.70067%207.74355%205.01199%208.44122%205.02324L25.8008%205.30317C26.425%205.31324%2026.8875%205.88644%2026.7654%206.49865L25.4106%2013.2909C25.3288%2013.701%2025.0004%2014.017%2024.5874%2014.0828L11.8212%2016.119ZM13.6523%2021.0331C13.6523%2022.3178%2012.6109%2023.3593%2011.3262%2023.3593C10.0415%2023.3593%209%2022.3178%209%2021.0331C9%2019.7484%2010.0415%2018.707%2011.3262%2018.707C12.6109%2018.707%2013.6523%2019.7484%2013.6523%2021.0331ZM22.957%2023.3593C24.2417%2023.3593%2025.2832%2022.3178%2025.2832%2021.0331C25.2832%2019.7484%2024.2417%2018.707%2022.957%2018.707C21.6723%2018.707%2020.6309%2019.7484%2020.6309%2021.0331C20.6309%2022.3178%2021.6723%2023.3593%2022.957%2023.3593Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A)
+      center/contain no-repeat;
   }
   .badge {
     position: absolute;
@@ -168,15 +195,18 @@ body.catalogOpen {
   }
 
   a {
-    color: rgba(255,255,255,.6);
+    position: relative;
+    padding: 0 5px;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
+    
     &:active {
       text-decoration: none;
     }
     &:hover {
       color: #fff;
     }
-  }  
+  }
 }
 
 main {
@@ -207,5 +237,5 @@ footer {
   }
   div {
     margin-top: 3vh;
-  }  
+  }
 }

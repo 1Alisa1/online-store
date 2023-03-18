@@ -1,6 +1,11 @@
 .headerSearch {
   position: relative;
   width: 50%;
+  @media(max-width: 1200px) {
+    display: flex;
+    order: 1;
+    width: 100%;
+  }
   .searchInput {
     font-size: 18px;
     line-height: 24px;

@@ -1,3 +1,5 @@
+@use "/src/scss/mixins" as *;
+
 .wrapper {
   max-width: 1504px;
   margin: 0 auto;
@@ -16,43 +18,51 @@
         flex-direction: row;
         justify-content: space-between;
         gap: 2rem;
-        max-width: 752px;
+        max-width: 850px;
         margin-bottom: 5rem;
         img {
-          width: 15vw;
+          width: 30vw;
           height: auto;
+          border-radius: 10px;
+          @include small {
+            width: 250px;
+          }
         }
         .productInfo {
           width: 50%;
           .productTitle {
-            
             margin-bottom: 1.5rem;
-            font-size: large;
+            font-size: x-large;
+            font-weight: 600;
           }
           .productPrice {
             margin-bottom: 2rem;
-            font-size: large;
+            font-size: x-large;
           }
           .count {
             display: inline-block;
             background: #f6f6fa;
             border-radius: 6px;
             .buttonLeft {
+              width: 30px;
               border: none;
               border-radius: 6px;
               font-size: x-large;
               margin-right: 1rem;
               cursor: pointer;
+              -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             }
             span {
               font-size: larger;
             }
             .buttonRight {
+              width: 30px;
               border: none;
               border-radius: 6px;
               font-size: x-large;
               margin-left: 1rem;
               cursor: pointer;
+              -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             }
           }
         }
@@ -61,8 +71,9 @@
           font-size: larger;
           padding: 4px 10px;
           border: none;
-          cursor: pointer;
           border-radius: 6px;
+          cursor: pointer;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
       }
     }

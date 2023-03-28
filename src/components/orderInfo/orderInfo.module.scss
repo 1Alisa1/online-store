@@ -1,8 +1,4 @@
-@mixin flex() {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+@use "/src/scss/mixins" as *;
 
 $linkColor: rgb(131 26 153);
 
@@ -14,9 +10,9 @@ $linkColor: rgb(131 26 153);
   border-radius: 16px;
   .total {
     @include flex();
+    margin-bottom: 1rem;
     font-size: x-large;
     font-weight: bold;
-    margin-bottom: 1rem;
   }
   .amount {
     @include flex();
@@ -25,21 +21,21 @@ $linkColor: rgb(131 26 153);
   }
   .delivery {
     @include flex();
-    font-size: larger;
     margin-bottom: 1rem;
+    font-size: larger;
   }
   input {
-    background-color: #cb11ab;
-    color: white;
     display: block;
     height: 2.5rem;
     width: 100%;
     border: none;
     border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: #cb11ab;
+    color: white;
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 1rem;
     &:hover {
       background-color: #e313bf;
     }

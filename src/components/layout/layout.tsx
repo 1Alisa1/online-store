@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { useAppSelector } from '../hooks/reduxHooks';
-import { useAuth } from '../hooks/useAuth';
-import Categories from './categories/categories';
-import ProductsFilter from './productsFilter/productsFilter';
+import { useAppSelector } from '../../hooks/reduxHooks';
+import { useAuth } from '../../hooks/useAuth';
+import Categories from '../categories/categories';
+import ProductsFilter from '../productsFilter/productsFilter';
+import styles from './layout.module.scss';
 
 const Layout: React.FC = () => {
   const [activeCatalog, setActiveCatalog] = useState(false);
@@ -27,50 +28,50 @@ const Layout: React.FC = () => {
 
   return (
     <>
-      <header className="header">
-        <div className="wrapper">
-          <div className="headerTop">
+      <header className={styles.header}>
+        <div className={styles.wrapper}>
+          <div className={styles.headerTop}>
             <ul>
               <li>
-                <div className="flagBy"></div>
+                <div className={styles.flagBy}></div>
                 <div>BYN</div>
               </li>
               <li>
-                <div className="iconAddress"></div>
+                <div className={styles.iconAddress}></div>
                 <div>Минск</div>
               </li>
               <li>
-                <div className="sale">Продавайте на Wildberries</div>
+                <div className={styles.sale}>Продавайте на Wildberries</div>
               </li>
             </ul>
           </div>
-          <div className="headerBottom">
-            <div className="headerCatalog">
+          <div className={styles.headerBottom}>
+            <div className={styles.headerCatalog}>
               <button type="button" onClick={handleClick}></button>
             </div>
-            <Link to="/" className="headerLogo">
+            <Link to="/" className={styles.headerLogo}>
               <img
                 src="https://static.wbstatic.net/i/header/logo-v1.svg"
                 alt="wildberries"
               ></img>
             </Link>
             <ProductsFilter></ProductsFilter>
-            <div className="headerContent">
+            <div className={styles.headerContent}>
               <Link
                 to="/addresses"
-                className="addresses"
+                className={styles.addresses}
                 data-title="25 378 пунктов выдачи"
               >
-                <div className="icon1"></div>
+                <div className={styles.icon1}></div>
                 <p>Адреса</p>
               </Link>
               <Link to={isAuth ? '/user' : '/security'}>
-                <div className="icon2"></div>
+                <div className={styles.icon2}></div>
                 <p>{isAuth ? name : 'Войти'}</p>
               </Link>
               <Link to="/cart">
-                <div className="icon3"></div>
-                <div className="badge">{getTotalQuantity() || 0}</div>
+                <div className={styles.icon3}></div>
+                <div className={styles.badge}>{getTotalQuantity() || 0}</div>
                 <p>Корзина</p>
               </Link>
             </div>

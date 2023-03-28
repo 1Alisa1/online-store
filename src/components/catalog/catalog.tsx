@@ -20,7 +20,7 @@ const Catalog: React.FC = () => {
   if (error) {
     return <div>Error: Oops... </div>;
   } else if (loading) {
-    return <div>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   } else {
     return (
       <>

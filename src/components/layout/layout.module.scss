@@ -1,35 +1,4 @@
-@import-normalize;
-
-@mixin flex() {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-html,
-body {
-  margin: 0;
-  height: 100%;
-}
-
-body.catalogOpen {
-  overflow: hidden;
-}
-
-.wrapper {
-  position: relative;
-  max-width: 1504px;
-  padding: 0 32px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
+@use "/src/scss/mixins" as *;
 
 .header {
   background: linear-gradient(to right, #cb11ab 0, #481173 100%) no-repeat;
@@ -45,6 +14,14 @@ body.catalogOpen {
     position: absolute;
     bottom: -1px;
     left: 0;
+  }
+  .wrapper {
+    position: relative;
+    max-width: 1504px;
+    padding: 0 32px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -63,6 +40,7 @@ body.catalogOpen {
       display: flex;
       gap: 0.5rem;
       cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       .flagBy {
         background: url(data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%226%22%20cy%3D%226%22%20r%3D%226%22%20fill%3D%22%230039A5%22%2F%3E%3Cpath%20d%3D%22M12%206A6%206%200%201%201%200%206a6%206%200%200%201%2012%200z%22%20fill%3D%22%23EC1B26%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M.264%207.765a6.003%206.003%200%200%200%2011.472%200H.264z%22%20fill%3D%22%2300A653%22%2F%3E%3C%2Fsvg%3E)
           center no-repeat;
@@ -95,16 +73,15 @@ body.catalogOpen {
 .headerBottom {
   @include flex();
   gap: 2rem;
-  @media (max-width: 1200px) {
+  @include small {
     flex-wrap: wrap;
   }
   .headerCatalog {
     width: 3%;
-    @media (max-width: 1200px) {
+    @include small {
       width: 10%;
     }
     button {
-      cursor: pointer;
       width: 32px;
       height: 32px;
       padding: 21px;
@@ -115,26 +92,19 @@ body.catalogOpen {
       background-repeat: no-repeat;
       background-position: center;
       background-image: url(https://cdn-icons-png.flaticon.com/24/483/483334.png);
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
   }
   .headerLogo {
     width: 35%;
     max-width: 270px;
     min-width: 200px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     img {
       width: 100%;
     }
   }
-}
-
-////
-
-@mixin icon($width) {
-  display: block;
-  height: 27px;
-  margin: 0 auto 6px;
-  position: relative;
-  width: $width;
 }
 
 .headerContent {
@@ -142,7 +112,7 @@ body.catalogOpen {
   gap: 2rem;
   line-height: 0px;
   position: relative;
-  @media (max-width: 1200px) {
+  @include small {
     justify-content: center;
     gap: 0.5rem;
     width: 100%;
@@ -151,7 +121,7 @@ body.catalogOpen {
     content: attr(data-title);
     position: absolute;
     left: -66px;
-    right: 103px;
+    right: -66px;
     bottom: -50px;
     z-index: 1;
     background: rgb(255 255 255);
@@ -160,7 +130,8 @@ body.catalogOpen {
     padding: 20px 5px;
     border-radius: 15px;
     color: black;
-    font-size: 0.8rem
+    box-shadow: 0px 3px 4px 0px lightgray;
+    font-size: 0.8rem;
   }
   .icon1 {
     @include icon(16px);
@@ -199,7 +170,7 @@ body.catalogOpen {
     padding: 0 5px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &:active {
       text-decoration: none;
     }
@@ -212,6 +183,7 @@ body.catalogOpen {
 main {
   flex: 1 0 auto;
   position: relative;
+  margin-top: 20px;
   border-radius: 10%;
 }
 

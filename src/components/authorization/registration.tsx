@@ -66,6 +66,7 @@ const Registration: React.FC = () => {
             className={styles.input}
             type="text"
             placeholder="Name"
+            autoComplete='off'
             {...register('name', {
               required: 'Field must not be empty',
             })}
@@ -79,6 +80,7 @@ const Registration: React.FC = () => {
             className={styles.input}
             type="text"
             placeholder="Surname"
+            autoComplete='off'
             {...register('surname', {
               required: 'Field must not be empty',
             })}
@@ -92,6 +94,7 @@ const Registration: React.FC = () => {
             className={styles.input}
             type="text"
             placeholder="Email"
+            autoComplete='off'
             {...register('email', {
               required: 'Field must not be empty',
             })}
@@ -105,6 +108,7 @@ const Registration: React.FC = () => {
             className={styles.input}
             type="password"
             placeholder="Pick a password"
+            autoComplete='off'
             {...register('password', {
               required: 'Field must not be empty',
               minLength: {

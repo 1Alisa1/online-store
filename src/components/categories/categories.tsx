@@ -14,7 +14,7 @@ const Categories: React.FC<CategoriesProps> = ({ isActive, handleClick }) => {
     <div>
       <div
         className={styles.categories}
-        style={{left: isActive ? '0' : '-40vw'}}
+        style={{left: isActive ? '0' : '-100%'}}
       >
         {(() => {
           if (error) {
@@ -27,11 +27,11 @@ const Categories: React.FC<CategoriesProps> = ({ isActive, handleClick }) => {
                 {categories &&
                   categories.map((el) => {
                     return (
-                      <Link key={el} to={`catalog?category=${el}`}>
+                      <Link key={el.categoryid} to={`catalog?category=${el.categoryid}`}>
                         <input
                           className={styles.button}
                           type="button"
-                          value={el}
+                          value={el.name}
                           onClick={handleClick}
                         ></input>
                       </Link>

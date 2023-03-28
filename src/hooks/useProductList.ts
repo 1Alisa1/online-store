@@ -2,24 +2,22 @@ import { useFetch } from './useFetch';
 import ProductItem from '../models/productItem';
 
 export function useProductList(
-  category?: string | null,
+  categoryId?: string | null,
   searchQuery?: string | null
 ) {
-  let url = 'https://fakestoreapi.com/products';
+  let url = 'http://localhost:8080/products';
 
-  if (category) {
-    url += '/category/' + category;
+  if (categoryId) {
+    url += '?categoryId=' + categoryId;
+  }
+
+  if (searchQuery) {
+    url += '?searchQuery=' + searchQuery;
   }
 
   const { loading, response, error } = useFetch<ProductItem[]>(url);
 
   let result = response;
-
-  if (searchQuery && !error && !loading && result) {
-    result = result.filter((product) =>
-      product.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
 
   return {
     loading,

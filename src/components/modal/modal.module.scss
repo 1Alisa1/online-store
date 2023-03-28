@@ -1,3 +1,5 @@
+@use "/src/scss/mixins" as *;
+
 .modal {
   width: 100vw;
   height: 100vh;
@@ -19,11 +21,12 @@
   .modalContent {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 25px;
     border-radius: 12px;
     background-color: white;
-    width: 70vw;
-    height: 80vh;
+    width: 60vw;
+    height: fit-content;
+    @include small {
+      width: 90vw;
+    }
   }
 } 

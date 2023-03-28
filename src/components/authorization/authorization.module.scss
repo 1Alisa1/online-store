@@ -16,6 +16,7 @@
       border-radius: 8px;
       border: none;
       box-shadow: 0px 0px 12px 3px rgb(211 208 208);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       &:focus-visible {
         outline: none;
       }
@@ -23,7 +24,7 @@
   }
   .button {
     width: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding: 10px;
     border-radius: 6px;
     border: none;
@@ -31,6 +32,7 @@
     color: #fff;
     font-size: large;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &:hover {
       background-color: #e313bf;
     }

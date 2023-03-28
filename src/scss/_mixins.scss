@@ -1,0 +1,19 @@
+@mixin flex() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin icon($width) {
+  display: block;
+  height: 27px;
+  margin: 0 auto 6px;
+  position: relative;
+  width: $width;
+}
+
+@mixin small {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}

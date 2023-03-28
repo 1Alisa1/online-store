@@ -42,7 +42,7 @@ const CardProduct: React.FC<CardProductProps> = ({
       </div>
       <div className={styles.cardPrice}>{price} $</div>
       <div className={styles.cardTitle}>
-        {title.length > 20 ? title.substring(0, 20) + '...' : title}
+        {title}
       </div>
     </div>
   );

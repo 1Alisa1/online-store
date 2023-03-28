@@ -1,25 +1,28 @@
+@use "/src/scss/mixins" as *;
+
 .headerSearch {
   position: relative;
   width: 50%;
-  @media(max-width: 1200px) {
+  @include small {
     display: flex;
     order: 1;
     width: 100%;
   }
   .searchInput {
+    width: 100%;
+    padding: 16px 44px 16px 44px;
+    margin: 0;
+    border: none;
+    border-radius: 56px;
     font-size: 18px;
     line-height: 24px;
     transition: background 0.3s ease 0s;
     color: rgba(255, 255, 255, 0.5);
-    width: 100%;
-    padding: 16px 44px 16px 44px;
-    margin: 0;
-    border-radius: 56px;
     background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
     appearance: none;
-    border: none;
     outline: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &:hover {
       background: rgba(255, 255, 255, 0.5);
     }
@@ -46,6 +49,7 @@
     background-repeat: no-repeat;
     background-position: 0 center;
     background-image: url(https://cdn-icons-png.flaticon.com/24/2866/2866321.png);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   input[type='search']::-webkit-search-decoration,

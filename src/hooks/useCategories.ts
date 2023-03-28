@@ -1,8 +1,9 @@
+import Category from '../models/category';
 import { useFetch } from './useFetch';
 
 export function useCategories() {
-  const { loading, response, error } = useFetch<string[]>(
-    'https://fakestoreapi.com/products/categories'
+  const { loading, response, error } = useFetch<Array<Category>>(
+    'http://localhost:8080/categories'
   );
 
   return {

@@ -38,7 +38,7 @@ const ProductsFilter: React.FC = () => {
         className={styles.searchInput}
         type="search"
         name="search"
-        placeholder="I search..."
+        placeholder="I am searching..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       ></input>

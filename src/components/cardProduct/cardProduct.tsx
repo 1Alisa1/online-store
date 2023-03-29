@@ -40,7 +40,7 @@ const CardProduct: React.FC<CardProductProps> = ({
           </div>
         </div>
       </div>
-      <div className={styles.cardPrice}>{price} $</div>
+      <div className={styles.cardPrice}>${price}</div>
       <div className={styles.cardTitle}>
         {title}
       </div>

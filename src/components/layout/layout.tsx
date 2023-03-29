@@ -38,10 +38,10 @@ const Layout: React.FC = () => {
               </li>
               <li>
                 <div className={styles.iconAddress}></div>
-                <div>Минск</div>
+                <div>Minsk</div>
               </li>
               <li>
-                <div className={styles.sale}>Продавайте на Wildberries</div>
+                <div className={styles.sale}>Sell on Wildberries</div>
               </li>
             </ul>
           </div>
@@ -60,19 +60,19 @@ const Layout: React.FC = () => {
               <Link
                 to="/addresses"
                 className={styles.addresses}
-                data-title="25 378 пунктов выдачи"
+                data-title="25 378 pickup points"
               >
                 <div className={styles.icon1}></div>
-                <p>Адреса</p>
+                <p>Adresses</p>
               </Link>
               <Link to={isAuth ? '/user' : '/security'}>
                 <div className={styles.icon2}></div>
-                <p>{isAuth ? name : 'Войти'}</p>
+                <p>{isAuth ? name : 'Sing In'}</p>
               </Link>
               <Link to="/cart">
                 <div className={styles.icon3}></div>
                 <div className={styles.badge}>{getTotalQuantity() || 0}</div>
-                <p>Корзина</p>
+                <p>Cart</p>
               </Link>
             </div>
           </div>

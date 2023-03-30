@@ -34,7 +34,7 @@ const Layout: React.FC = () => {
             <ul>
               <li>
                 <div className={styles.flagBy}></div>
-                <div>BYN</div>
+                <div>USD</div>
               </li>
               <li>
                 <div className={styles.iconAddress}></div>

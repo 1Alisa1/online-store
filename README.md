@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Online-store
+![Online-store](./img/wildberries.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This project is a web store. The design bases on Wildberries. Project supports basic web store functionality: showcase with product descriptions, product categories, product search, shopping cart, authorization and registration.
 
-## Available Scripts
+## Basic characteristics
+* The user can select a product on the main page, go to a particular category or find a product by its name
+* When user hover cursor over the product image, there appear button to get more information about the product. When user click this button, a modal window open with a description and a button to add product to cart.
+* You can add more quantity of product to your cart. The price calculator will show the total cost.
+* To make an order, the user must be logged in.
+* After registeration or logging in, the user page becomes available. This page contains information about the user and the button to log out.
 
-In the project directory, you can run:
+## Installing
+To work with code, clone or download this repository.
+Then open root directory and run next command to install npm packages:
+```sh
+npm i
+```
+To build appilcation run
+```sh
+npm build
+```
+To run dev mode run
+```sh
+npm start
+```
 
-### `npm start`
+## API
+This application uses a [third party application](https://github.com/1Alisa1/store-api) that provides an API for working with products. To work, the API application must be running on the same machine and listening on port 8080.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies
+* [React](https://github.com/facebook/react)
+* [React Router](https://github.com/remix-run/react-router)
+* [React Hook Form](https://github.com/react-hook-form/react-hook-form)
+* [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)
+* [TypeScript](https://github.com/microsoft/TypeScript)
+* [Sass](https://github.com/sass/sass)
+* [Firebase](https://firebase.google.com/)
